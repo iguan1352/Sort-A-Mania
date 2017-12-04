@@ -88,5 +88,5 @@ public class Team11SortCompetition {
 		return -1;
 	}
 	
-	public static int challengeThree
+	public static int challengeThree()
 }
