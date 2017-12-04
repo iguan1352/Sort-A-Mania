@@ -44,10 +44,49 @@ public class Team11SortCompetition {
 		return list1;
 	}
 	
+	public static void bubbleSort(String[] list1)
+	{
+		boolean swap = false;
+		while(!swap)
+		{
+			int numSwaps = 0;
+			for(int i = 0; i < list1.length-1; i++)
+			{
+				String value;
+				if(list1[i].compareTo(list1[i+1]) > 0)
+				{
+					value = list1[i+1];
+					list1[i+1] = list1[i];
+					list1[i] = value;
+					numSwaps++;
+				}		
+			}
+			if(numSwaps == 0) //the elements stops iterating when the number of swap is 0
+			{
+				swap = true;
+			}
+			
+		}
+	}
 	
-	public static double standardSort(int[] list1)
+	public static int challengeOne(int[] list1)
 	{
 		selectionSort(list1);
-		return (double)(list1[2] + list1[3])/2;
+		return (list1[4999] + list1[5000])/2;
 	}
+	
+	public static int challengeTwo(String[] list1, String find)
+	{
+		bubbleSort(list1);
+		for (int i = 0; i < list1.length; i++)
+		{
+			if(list1[i].compareTo(find) == 0)
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	public static int challengeThree
 }
