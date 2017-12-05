@@ -38,12 +38,9 @@ public class Team11SortCompetition {
 		for(int i =  0; i < list1.length; i++)
 		{
 			selectionSort(list1[i]); //sorts each row correctly (already tested)
-			for(int j = 0; j < medians.length; j++)
-			{
-				medians[j] = challengeOne(list1[i]);
-			}
+			medians[i] = challengeOne(list1[i]);
 		}	
-		selectionSort(medians);
+
 		return challengeOne(medians);
 		
 	}
