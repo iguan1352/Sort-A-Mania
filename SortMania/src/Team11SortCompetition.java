@@ -2,12 +2,15 @@
 public class Team11SortCompetition {
 	public static void main(String[] args)
 	{
-		int[] testList = {5, 1, 6, 2, 4, 3};
+		/*int[] testList = {5, 1, 6, 2, 5, 3};
 		System.out.println(challengeOne(testList));
 		for(int i = 0; i < testList.length; i++)
 		{
 			System.out.println(testList[i]);
-		}
+		}*/
+		
+		int[][] testList = {{3, 1, 1, 5}, {6, 8, 10, 5}, {9, 2, -1, 0}, {8, 3, 1, 5}};
+		System.out.println(challengeFour(testList));
 	}
 	
 	public static int challengeOne(int[] list1)
@@ -31,9 +34,16 @@ public class Team11SortCompetition {
 	
 	public static int challengeFour(int[][] list1)
 	{
-		int[] medians = new int[1000];
-
-		
+		int[] medians = new int[4];
+		for(int i =  0; i < list1.length; i++)
+		{
+			selectionSort(list1[i]); //sorts each row correctly (already tested)
+			for(int j = 0; j < medians.length; j++)
+			{
+				medians[j] = challengeOne(list1[i]);
+			}
+		}	
+		selectionSort(medians);
 		return challengeOne(medians);
 		
 	}
