@@ -32,6 +32,12 @@ public class Team11SortCompetition {
 		return -1;
 	}
 	
+	public static int challengeThree(int[] list1) 
+	{ 
+		insertionSort(list1); 
+		return (list1[list1.length/2 - 1] + list1[list1.length/2])/2; 
+	}
+	
 	public static int challengeFour(int[][] list1)
 	{
 		int[] medians = new int[4];
@@ -101,6 +107,31 @@ public class Team11SortCompetition {
 				swap = true;
 			}
 			
+		}
+	}
+	
+	public static void insertionSort(int[] list1)
+	{
+		for(int i = 0; i < list1.length-1; i++)
+		{
+			int value;
+			if(list1[i] > list1[i+1]) //takes index i and compares it with with the index after i
+			{
+				//if index i is greater then it will swap with index i+1
+				value = list1[i];
+				list1[i] = list1[i+1];
+				list1[i+1] = value;
+				for(int j = i; j > 0; j--) //checks the value in the sub-sorted array(elements before i)
+				{
+					int value2;
+					if(list1[j-1] > list1[j])
+					{
+						value2 = list1[j-1];
+						list1[j-1] = list1[j];
+						list1[j] = value2;
+					}
+				} 
+			}
 		}
 	}
 }
