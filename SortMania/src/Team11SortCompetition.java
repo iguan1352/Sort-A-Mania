@@ -40,7 +40,7 @@ public class Team11SortCompetition {
 	
 	public static int challengeFour(int[][] list1)
 	{
-		int[] medians = new int[4];
+		int[] medians = new int[list1.length];
 		for(int i =  0; i < list1.length; i++)
 		{
 			selectionSort(list1[i]); //sorts each row correctly (already tested)
@@ -48,6 +48,10 @@ public class Team11SortCompetition {
 		}	
 
 		return challengeOne(medians);
+	}
+	
+	public static int challengeFive()
+	{
 		
 	}
 	
