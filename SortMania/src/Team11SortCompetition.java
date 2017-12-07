@@ -52,7 +52,7 @@ public class Team11SortCompetition {
 	
 	public static int challengeFive(Comparable[] arr, Comparable query)
 	{
-		
+		bubbleSort(arr);
 		for (int i = 0; i < arr.length; i++)
 		{
 			if (arr[i].compareTo(query) == 0)
@@ -146,4 +146,31 @@ public class Team11SortCompetition {
 			}
 		}
 	}
+	
+	public static void bubbleSort(Comparable[] list1)
+	{
+		boolean swap = false;
+		while(!swap)
+		{
+			int numSwaps = 0;
+			for(int i = 0; i < list1.length-1; i++)
+			{
+				Comparable value;
+				if(list1[i].compareTo(list1[i+1]) > 0)
+				{
+					value = list1[i+1];
+					list1[i+1] = list1[i];
+					list1[i] = value;
+					numSwaps++;
+				}		
+			}
+			if(numSwaps == 0) //the elements stops iterating when the number of swap is 0
+			{
+				swap = true;
+			}
+			
+		}
+	}
+	
+	
 }
