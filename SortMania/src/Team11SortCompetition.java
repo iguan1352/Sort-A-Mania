@@ -9,8 +9,8 @@ public class Team11SortCompetition {
 			System.out.println(testList[i]);
 		}*/
 		
-		int[][] testList = {{3, 1, 1, 5}, {6, 8, 10, 5}, {9, 2, -1, 0}, {8, 3, 1, 5}};
-		System.out.println(challengeFour(testList));
+		Comparable[] test = {"hi", 1, "test"};
+		System.out.println(challengeFive(test, 1));
 	}
 	
 	public static int challengeOne(int[] list1)
@@ -50,9 +50,17 @@ public class Team11SortCompetition {
 		return challengeOne(medians);
 	}
 	
-	public static int challengeFive()
+	public static int challengeFive(Comparable[] arr, Comparable query)
 	{
 		
+		for (int i = 0; i < arr.length; i++)
+		{
+			if (arr[i].compareTo(query) == 0)
+			{
+				return i;
+			}
+		}
+		return -1;
 	}
 	
 	public static int[] selectionSort(int[] list1)
